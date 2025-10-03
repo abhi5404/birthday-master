@@ -7,53 +7,59 @@
 <head>
 <style>
 	/* ANU balloons row styling */
-		#anu-balloons-row {
-			position: relative;
-			z-index: 9999 !important;
-			background: none;
-			margin: 0 auto 0 auto;
-			text-align: center;
-			width: 100%;
-			pointer-events: none;
-			top: 10px; /* move balloons row slightly down */
-		}
-	#anu-balloons-row .balloon-anu {
-		display: inline-block !important;
-		float: none !important;
-		opacity: 1 !important;
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center top;
-		width: 100px;
-		height: 160px;
-		margin: 0 10px;
-		position: relative;
-		z-index: 9999;
-		pointer-events: none;
-	}
+			#anu-balloons-row {
+				position: relative;
+				z-index: 9999 !important;
+				background: none;
+				margin: 0 auto 0 auto;
+				text-align: center;
+				width: 100%;
+				pointer-events: none;
+				top: 30px; /* move balloons row slightly down for better fit */
+				display: flex;
+				justify-content: center;
+				align-items: flex-start;
+				gap: 30px;
+				height: 170px;
+			}
+			#anu-balloons-row .balloon-anu {
+				display: flex !important;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				float: none !important;
+				opacity: 1 !important;
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center top;
+				width: 110px;
+				height: 160px;
+				margin: 0;
+				position: relative;
+				z-index: 9999;
+				pointer-events: none;
+			}
 	#anu-balloons-row .balloon-anu.a { background-image: url('b1.png'); }
 	#anu-balloons-row .balloon-anu.n { background-image: url('b2.png'); }
 	#anu-balloons-row .balloon-anu.u { background-image: url('b3.png'); }
-			#anu-balloons-row .balloon-anu h2 {
-				display: flex !important;
-				align-items: center;
-				justify-content: center;
-				opacity: 1 !important;
-				font-size: 24px !important;
-				font-weight: bold;
-				text-shadow: 2px 2px 12px #fff, 0 0 18px #000;
-				margin: 0;
-				padding: 0;
-				line-height: 1;
-				color: #fff;
-				width: 100%;
-				height: 100%;
-				text-align: center;
-				pointer-events: none;
-				position: absolute;
-				top: 0;
-				left: 0;
-			}
+						#anu-balloons-row .balloon-anu h2 {
+							display: flex !important;
+							align-items: flex-start;
+							justify-content: center;
+							opacity: 1 !important;
+							font-size: 22px !important;
+							font-weight: bold;
+							text-shadow: 2px 2px 12px #fff, 0 0 18px #000;
+							margin: 48px 0 0 0;
+							padding: 0;
+							line-height: 1;
+							color: #fff;
+							width: 100%;
+							height: 100%;
+							text-align: center;
+							pointer-events: none;
+							position: relative;
+						}
 		#anu-balloons-row .balloon-anu {
 			position: relative;
 			vertical-align: top;
