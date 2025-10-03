@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="ie lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="ie lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="ie lt-ie9"> <![endif]-->
+<!--[if gt IE 8]> <html> <![endif]-->
+<!--[if !IE]><!--><html lang="en"><!-- <![endif]-->
+<head>
+<style>
+	/* ANU balloons row styling */
+		#anu-balloons-row {
+			position: relative;
+			z-index: 9999 !important;
+			background: none;
+			margin: 0 auto 0 auto;
+			text-align: center;
+			width: 100%;
+			pointer-events: none;
+			top: 10px; /* move balloons row slightly down */
+		}
+	#anu-balloons-row .balloon-anu {
+		display: inline-block !important;
+		float: none !important;
+		opacity: 1 !important;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center top;
+		width: 100px;
+		height: 160px;
+		margin: 0 10px;
+		position: relative;
+		z-index: 9999;
+		pointer-events: none;
+	}
+	#anu-balloons-row .balloon-anu.a { background-image: url('b1.png'); }
+	#anu-balloons-row .balloon-anu.n { background-image: url('b2.png'); }
+	#anu-balloons-row .balloon-anu.u { background-image: url('b3.png'); }
+			#anu-balloons-row .balloon-anu h2 {
+				display: flex !important;
+				align-items: center;
+				justify-content: center;
+				opacity: 1 !important;
+				font-size: 24px !important;
+				font-weight: bold;
+				text-shadow: 2px 2px 12px #fff, 0 0 18px #000;
+				margin: 0;
+				padding: 0;
+				line-height: 1;
+				color: #fff;
+				width: 100%;
+				height: 100%;
+				text-align: center;
+				pointer-events: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		#anu-balloons-row .balloon-anu {
+			position: relative;
+			vertical-align: top;
+		}
+</style>
+	<title>Happy Birthday</title>
+	<meta charset="UTF-8" />
+	<meta name="description" content="Happy Birthday Xola">
+	<meta name="robots" content="index, follow" />
+	<link rel="author" href="https://plus.google.com/u/1/+AyushSharma1/" /> 
+    <meta name="keywords" content="Birthday, Happy">
+    <!-- Strat of Facebook Meta -->
+    <meta property="og:type" content="E-Greeting" />
+    <meta property="og:image" content="favicon.ico" />
+    <meta property="og:description" content="Wish you a very Happy Birthday">
+    <!-- End of Facebook Meta Tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="loading.css">
+	<link href='http://fonts.googleapis.com/css?family=Signika' rel='stylesheet' type='text/css'>
+	<!-- <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'> -->
+	<link rel="stylesheet/less" href="cake.less">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.1.0/less.min.js"></script>
+</head>
+
+<body>
+	<div class="loading"></div>
+	<audio class="song" controls loop>
+        <source src="hbd.mp3"></source>
+	   Your browser isn't invited for super fun audio time.
+    </audio>
+
+	   <!-- Balloons for "ANU" only, hidden by default, shown when flying -->
+		 <div id="anu-balloons-row" style="display:none;">
+			 <div class="balloon-anu a"><h2>A</h2></div>
+			 <div class="balloon-anu n"><h2>N</h2></div>
+			 <div class="balloon-anu u"><h2>U</h2></div>
+		 </div>
+
+	<img src="Balloon-Border.png" width="100%" class="balloon-border">
+	<!-- ANU balloons will be inserted below banner, above cake -->
+ 
+
+	<div class="container">
+		
+		<div class="row">
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_yellow"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_red"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_blue"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_green"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_pink"></div>
+			</div>
+			<div class="col-md-2 col-xs-2 bulb-holder">
+				<div class="bulb" id="bulb_orange"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<img src="banner.png" class="bannar">
+			</div>
+		</div>
+		<!-- ANU balloons row appears here when flying -->
+		<div id="anu-balloons-row-anchor"></div>
+			<!-- ANU images containers (fixed sides, always visible after decorate) -->
+			<div id="anu-img-left-anim" style="position: fixed; top: 0; left: 0; width: 200px; height: 100vh; z-index: 100; display: none; overflow: hidden;"></div>
+			<div id="anu-img-right-anim" style="position: fixed; top: 0; right: 0; width: 200px; height: 100vh; z-index: 100; display: none; overflow: hidden;"></div>
+
+			<div class="row cake-cover">
+				<div class="col-md-12 texr-center" style="margin-top:-30px;">
+					<div class="cake" id="anu-cake-center">
+						<div class="velas">
+							<div class="fuego"></div>
+							<div class="fuego"></div>
+							<div class="fuego"></div>
+							<div class="fuego"></div>
+							<div class="fuego"></div>
+						</div>
+						<div class="cobertura"></div>
+						<div class="bizcocho"></div>
+					</div>
+				</div>
+			</div>
+		<div class="row message">
+			<div class="col-md-12">
+				<p>Happy Birthday Mum.. ❤️</p>
+				<p>Enjoy ur day...ekdom kono komti jeno na thake </p>
+				<p>Tor sb swopno , sb i66a jeno puron hoi </p>
+				<p>Baki ta wp e bol6i .....</p>
+				<p>Tataaa....</p>
+			</div>
+		</div>
+		<div class="navbar navbar-fixed-bottom">
+			<div class="row">
+				<div class="col-md-6 text-center col-md-offset-3">
+					<button class="btn btn-primary" id="turn_on">Turn On Lights</button>
+					<button class="btn btn-primary" id="play">Play Music</button>
+					<button class="btn btn-primary" id="bannar_coming">Let's Decorate</button>
+					<button class="btn btn-primary" id="balloons_flying">Fly With Balloons</button>
+					<button class="btn btn-primary" id="cake_fadein">Most Delicious Cake Ever</button>
+					<button class="btn btn-primary" id="light_candle"> Light Candle</button>
+					<button class="btn btn-primary" id="wish_message">Happy Birthday</button>
+					<button class="btn btn-primary" id="story">A mesage for you</button>
+					<!-- <button class="btn btn-primary" id="cake_cut">Lrt's Cut the Cake</button> -->
+				</div>
+			</div>
+			<!-- <div class="col-md-2">
+			</div>
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-2">
+			</div>
+			<div class="col-md-2">
+			</div> -->
+		</div>
+
+
+	</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="effect.js"></script>
+<script>
+// Move ANU balloons row to correct place in DOM on load
+window.addEventListener('DOMContentLoaded', function() {
+	var row = document.getElementById('anu-balloons-row');
+	var anchor = document.getElementById('anu-balloons-row-anchor');
+	if (row && anchor) {
+		anchor.parentNode.insertBefore(row, anchor.nextSibling);
+	}
+});
+</script>
+<script>
+// ANU images scroll logic (now 20 images)
+const anuLeftImages = [
+	"anu1.jpg", "anu2.jpg", "anu3.jpg", "anu4.jpg", "anu5.jpg",
+	"anu6.jpg", "anu7.jpg", "anu8.jpg", "anu9.jpg", "anu10.jpg"
+];
+const anuRightImages = [
+	"anu11.jpg", "anu12.jpg", "anu13.jpg", "anu14.jpg", "anu15.jpg",
+	"anu16.jpg", "anu17.jpg", "anu18.jpg", "anu19.jpg", "anu20.jpg"
+];
+let anuScrollIntervalLeft = null;
+let anuScrollIntervalRight = null;
+function startAnuImagesScroll() {
+	const leftDiv = document.getElementById('anu-img-left-anim');
+	const rightDiv = document.getElementById('anu-img-right-anim');
+	leftDiv.innerHTML = '';
+	rightDiv.innerHTML = '';
+	leftDiv.style.display = 'block';
+	rightDiv.style.display = 'block';
+	// Create wrappers for animation
+	let leftWrapper = document.createElement('div');
+	let rightWrapper = document.createElement('div');
+	leftWrapper.style.position = 'absolute';
+	leftWrapper.style.top = '0';
+	leftWrapper.style.left = '0';
+	leftWrapper.style.width = '100%';
+	rightWrapper.style.position = 'absolute';
+	rightWrapper.style.top = '0';
+	rightWrapper.style.right = '0';
+	rightWrapper.style.width = '100%';
+	// Add images (repeat for smooth loop)
+	for (let k = 0; k < 2; k++) {
+		anuLeftImages.forEach((src, idx) => {
+			const img = document.createElement('img');
+			img.src = src;
+			img.alt = `anu${idx+1}`;
+			img.style.width = '180px';
+			img.style.height = '180px';
+			img.style.display = 'block';
+			img.style.margin = '10px auto';
+			img.style.borderRadius = '16px';
+			leftWrapper.appendChild(img);
+		});
+		anuRightImages.forEach((src, idx) => {
+			const img = document.createElement('img');
+			img.src = src;
+			img.alt = `anu${idx+6}`;
+			img.style.width = '180px';
+			img.style.height = '180px';
+			img.style.display = 'block';
+			img.style.margin = '10px auto';
+			img.style.borderRadius = '16px';
+			rightWrapper.appendChild(img);
+		});
+	}
+	leftDiv.appendChild(leftWrapper);
+	rightDiv.appendChild(rightWrapper);
+	// Animate wrappers
+	let leftPos = 0;
+	let rightPos = 0;
+		const totalHeight = (anuLeftImages.length * 2) * (180 + 20); // image + margin
+	function scrollLeft() {
+		leftPos += 1;
+		if (leftPos >= totalHeight / 2) leftPos = 0;
+		leftWrapper.style.transform = `translateY(-${leftPos}px)`;
+	}
+	function scrollRight() {
+		rightPos += 1;
+		if (rightPos >= totalHeight / 2) rightPos = 0;
+		rightWrapper.style.transform = `translateY(-${rightPos}px)`;
+	}
+	if (anuScrollIntervalLeft) clearInterval(anuScrollIntervalLeft);
+	if (anuScrollIntervalRight) clearInterval(anuScrollIntervalRight);
+	anuScrollIntervalLeft = setInterval(scrollLeft, 20); // speed
+	anuScrollIntervalRight = setInterval(scrollRight, 20);
+}
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58229732-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>
